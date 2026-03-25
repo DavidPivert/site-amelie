@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amélie Brochet — Sophrologue & Préparation Mentale en Entreprise</title>
+    <meta name="description" content="Amélie Brochet, sophrologue et spécialiste en préparation mentale. Ateliers collectifs de gestion du stress en entreprise fondés sur les neurosciences. Paris & Île-de-France.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1C3D5A;
+            --navy-deep: #142C42;
+            --navy-light: #2A5A7E;
+            --gold: #D4A843;
+            --gold-light: #E8C96A;
+            --gold-pale: #F5E6B8;
+            --cyan: #4BA3C7;
+            --cyan-light: #7EC8E3;
+            --cyan-pale: #D6EEF5;
+            --beige: #F7F0E8;
+            --beige-light: #FBF7F2;
+            --gray-warm: #E8E0D8;
+            --gray-blue: #C5CED6;
+            --white: #FFFFFF;
+            --text-dark: #1C3D5A;
+            --text-body: #3A5068;
+            --text-light: #6B8299;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-body);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ============ WATERCOLOR BACKGROUNDS ============ */
+        .watercolor-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .watercolor-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(197, 206, 214, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 100% 0%, rgba(214, 238, 245, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 20%, rgba(247, 240, 232, 0.5) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ============ NAVIGATION ============ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(28, 61, 90, 0.08);
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            box-shadow: 0 4px 30px rgba(28, 61, 90, 0.08);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            height: 42px;
+            width: auto;
+        }
+        .nav-logo span {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-body);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-cta {
+            background: var(--navy);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            transition: all 0.3s !important;
+        }
+        .nav-cta::after { display: none !important; }
+        .nav-cta:hover {
+            background: var(--navy-light) !important;
+            transform: translateY(-1px);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background:
+                radial-gradient(ellipse at 0% 80%, rgba(197, 206, 214, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(214, 238, 245, 0.25) 0%, transparent 40%),
+                radial-gradient(ellipse at 30% 10%, rgba(247, 240, 232, 0.6) 0%, transparent 50%),
+                linear-gradient(180deg, var(--beige-light) 0%, var(--white) 100%);
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-text h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8rem;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero-text .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .hero-text .subtitle span {
+            color: var(--gold);
+        }
+        .hero-separator {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            margin: 1rem 0;
+            border-radius: 2px;
+        }
+        .hero-text .tagline {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            max-width: 480px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        .hero-text .tagline strong {
+            color: var(--navy);
+        }
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 2px solid var(--navy);
+        }
+        .btn-primary:hover {
+            background: var(--navy-light);
+            border-color: var(--navy-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(28, 61, 90, 0.2);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--navy);
+            padding: 0.85rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: 2px solid var(--navy);
+        }
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .hero-illustration {
+            max-height: 520px;
+            width: auto;
+            filter: drop-shadow(0 20px 40px rgba(28, 61, 90, 0.15));
+            position: relative;
+            z-index: 1;
+        }
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 168, 67, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        /* ============ SECTIONS COMMON ============ */
+        section {
+            position: relative;
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--navy);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+        .section-title span {
+            color: var(--gold);
+        }
+
+        /* ============ CONSTAT / SCIENCE ============ */
+        .science {
+            background:
+                radial-gradient(ellipse at 100% 100%, rgba(214, 238, 245, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 0% 0%, rgba(247, 240, 232, 0.4) 0%, transparent 50%),
+                var(--white);
+        }
+        .science-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .science-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1.02rem;
+        }
+        .science-content .highlight {
+            background: linear-gradient(180deg, transparent 60%, var(--gold-pale) 60%);
+            padding: 0 4px;
+            font-weight: 500;
+            color: var(--navy);
+        }
+        .neuro-card {
+            background: var(--white);
+            border: 1px solid rgba(28, 61, 90, 0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(28, 61, 90, 0.05);
+        }
+        .neuro-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--navy), var(--cyan), var(--gold));
+        }
+        .neuro-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+        .neuro-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            align-items: flex-start;
+        }
+        .neuro-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: var(--cyan-pale);
+            color: var(--navy);
+        }
+        .neuro-item h4 {
+            font-size: 0.95rem;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+        .neuro-item p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ============ QUOTE BANNER ============ */
+        .quote-banner {
+            background: var(--navy);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(75, 163, 199, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(212, 168, 67, 0.1) 0%, transparent 50%);
+        }
+        .quote-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--white);
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            line-height: 1.5;
+        }
+        .quote-text span {
+            color: var(--gold-light);
+        }
+
+        /* ============ APPROACH ============ */
+        .approach {
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(197, 206, 214, 0.25) 0%, transparent 50%),
+                var(--beige-light);
+        }
+        .approach-intro {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+        .approach-intro p {
+            font-size: 1.05rem;
+            color: var(--text-body);
+        }
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .pillar {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(28, 61, 90, 0.06);
+            box-shadow: 0 4px 25px rgba(28, 61, 90, 0.04);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .pillar:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(28, 61, 90, 0.1);
+        }
+        .pillar-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold-pale);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .pillar h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        .pillar p {
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+        .pillar-accent {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+        .pillar:nth-child(1) .pillar-accent { background: var(--cyan); }
+        .pillar:nth-child(2) .pillar-accent { background: var(--gold); }
+        .pillar:nth-child(3) .pillar-accent { background: var(--navy); }
+
+        /* ============ PROGRAMME ============ */
+        .programme {
+            background: var(--white);
+        }
+        .programme-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        .programme-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: var(--beige-light);
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s;
+        }
+        .step:hover {
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(28, 61, 90, 0.08);
+        }
+        .step-num {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .step h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+        }
+        .kit-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .kit-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(212, 168, 67, 0.1) 0%, transparent 60%);
+        }
+        .kit-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .kit-card .kit-subtitle {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .kit-feature {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        .kit-feature-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+        .kit-feature p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+        }
+        .kit-feature strong {
+            color: var(--white);
+        }
+        .format-badge {
+            display: inline-block;
+            background: rgba(212, 168, 67, 0.2);
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            color: var(--gold-light);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        /* ============ PACKAGES ============ */
+        .packages {
+            background:
+                radial-gradient(ellipse at 80% 0%, rgba(214, 238, 245, 0.2) 0%, transparent 50%),
+                var(--beige-light);
+        }
+        .packages-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 3rem;
+        }
+        .packages-intro p {
+            color: var(--text-body);
+            font-size: 1.02rem;
+        }
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .package-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(28, 61, 90, 0.06);
+            box-shadow: 0 4px 25px rgba(28, 61, 90, 0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(28, 61, 90, 0.12);
+        }
+        .package-card.featured {
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+        .package-badge {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--white);
+            padding: 0.3rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border-radius: 0 0 10px 10px;
+            text-transform: uppercase;
+        }
+        .package-header {
+            padding: 2.5rem 2rem 1.5rem;
+            text-align: center;
+        }
+        .package-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        .package-card:nth-child(1) .package-icon { background: var(--cyan-pale); }
+        .package-card:nth-child(2) .package-icon { background: var(--gold-pale); }
+        .package-card:nth-child(3) .package-icon { background: rgba(28, 61, 90, 0.08); }
+        .package-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        .package-header .duration {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .package-body {
+            padding: 0 2rem 2rem;
+            flex-grow: 1;
+        }
+        .package-feature {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(28, 61, 90, 0.05);
+        }
+        .package-feature:last-child {
+            border-bottom: none;
+        }
+        .package-check {
+            flex-shrink: 0;
+            color: var(--cyan);
+            font-weight: 700;
+            margin-top: 1px;
+        }
+        .package-feature p {
+            font-size: 0.88rem;
+            color: var(--text-body);
+        }
+        .package-footer {
+            padding: 1.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(28, 61, 90, 0.05);
+        }
+        .package-footer .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+        .package-footer a {
+            display: inline-block;
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .package-card:nth-child(1) .package-footer a,
+        .package-card:nth-child(3) .package-footer a {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+        .package-card:nth-child(1) .package-footer a:hover,
+        .package-card:nth-child(3) .package-footer a:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .package-card:nth-child(2) .package-footer a {
+            background: var(--navy);
+            color: var(--white);
+            border: 2px solid var(--navy);
+        }
+        .package-card:nth-child(2) .package-footer a:hover {
+            background: var(--navy-light);
+            border-color: var(--navy-light);
+        }
+
+        /* ============ IMPACT ============ */
+        .impact {
+            background: var(--white);
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .impact-card {
+            text-align: center;
+            padding: 2rem 1.2rem;
+            border-radius: 16px;
+            background: var(--beige-light);
+            border: 1px solid rgba(28, 61, 90, 0.04);
+            transition: all 0.3s;
+        }
+        .impact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(28, 61, 90, 0.08);
+            background: var(--white);
+        }
+        .impact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.3rem;
+            box-shadow: 0 2px 10px rgba(28, 61, 90, 0.06);
+        }
+        .impact-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        .impact-card p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ============ ABOUT ============ */
+        .about {
+            background:
+                radial-gradient(ellipse at 100% 80%, rgba(197, 206, 214, 0.25) 0%, transparent 50%),
+                var(--beige-light);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-portrait {
+            position: relative;
+        }
+        .about-portrait img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(28, 61, 90, 0.12);
+        }
+        .about-portrait::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+        }
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+        .about-content p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+        .about-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .credential {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: var(--navy);
+            font-weight: 500;
+            border: 1px solid rgba(28, 61, 90, 0.08);
+        }
+
+        /* ============ CONTACT ============ */
+        .contact {
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background:
+                radial-gradient(circle at 10% 80%, rgba(75, 163, 199, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 20%, rgba(212, 168, 67, 0.08) 0%, transparent 40%);
+        }
+        .contact .section-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .contact .section-label {
+            color: var(--gold-light);
+        }
+        .contact .section-title {
+            color: var(--white);
+        }
+        .contact .section-title span {
+            color: var(--gold-light);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            max-width: 450px;
+        }
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .contact-item a, .contact-item span {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .contact-item a:hover {
+            color: var(--gold-light);
+        }
+        .contact-item small {
+            display: block;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .contact-form h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.4rem;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .form-group select option {
+            background: var(--navy);
+            color: var(--white);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 50px;
+            border: none;
+            background: var(--gold);
+            color: var(--navy-deep);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .form-submit:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--navy-deep);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        footer p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.82rem;
+        }
+        footer a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .impact-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(28, 61, 90, 0.08);
+                box-shadow: 0 10px 30px rgba(28, 61, 90, 0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-separator { margin: 1rem auto; }
+            .hero-text .tagline { margin: 0 auto 2rem; }
+            .hero-cta-group { justify-content: center; }
+            .hero-illustration { max-height: 350px; }
+            .science-grid { grid-template-columns: 1fr; }
+            .pillars { grid-template-columns: 1fr; }
+            .programme-grid { grid-template-columns: 1fr; }
+            .packages-grid { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .about-portrait { display: flex; justify-content: center; }
+            .about-portrait::after { display: none; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.9rem; }
+            .quote-text { font-size: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-cta-group { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
+            .section-inner { padding: 4rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="Logo.jpeg" alt="Amélie Brochet - Logo">
+                <span>Amélie Brochet</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#science">Approche</a></li>
+                <li><a href="#methode">Méthode</a></li>
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#packages">Ateliers</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Amélie Brochet</h1>
+                <p class="subtitle"><strong>Sophrologue</strong> & spécialiste en <span>préparation mentale</span></p>
+                <div class="hero-separator"></div>
+                <p class="tagline">
+                    Des <strong>ateliers collectifs</strong> fondés sur les <strong>neurosciences</strong> pour transformer la gestion du stress en <strong>levier de performance opérationnelle</strong> au sein de votre organisation.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#packages" class="btn-primary">Découvrir les ateliers</a>
+                    <a href="#contact" class="btn-secondary">Demander un devis</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="Illustration Amélie.jpeg" alt="Amélie Brochet - Sophrologue en entreprise" class="hero-illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- SCIENCE / CONSTAT -->
+    <section class="science" id="science">
+        <div class="section-inner">
+            <div class="science-grid">
+                <div class="science-content fade-up">
+                    <p class="section-label">Le constat neurobiologique</p>
+                    <h2 class="section-title">Un décalage <span>biologique</span> face aux défis modernes</h2>
+                    <p>
+                        En entreprise, l'exigence de réactivité est constante, mais notre biologie reste configurée sur un fonctionnement de <span class="highlight">survie archaïque</span>. Face aux sollicitations modernes, notre système nerveux s'active comme s'il faisait face à un danger immédiat.
+                    </p>
+                    <p>
+                        Ce n'est pas une question de volonté, mais une <span class="highlight">limite physiologique</span> : sans phase de récupération, l'organisme bascule en surchauffe, dégradant mécaniquement la précision, la créativité et la prise de décision.
+                    </p>
+                    <p style="font-weight: 500; color: var(--navy);">
+                        Le stress n'est pas une fatalité, c'est une alerte système qu'il faut apprendre à décoder.
+                    </p>
+                </div>
+                <div class="neuro-card fade-up">
+                    <h3>Les mécanismes neurobiologiques</h3>
+                    <div class="neuro-item">
+                        <div class="neuro-icon">&#129504;</div>
+                        <div>
+                            <h4>Le Cerveau Archaïque</h4>
+                            <p>Votre radar de survie ne distingue pas un prédateur d'un dossier urgent. La réponse hormonale est identique.</p>
+                        </div>
+                    </div>
+                    <div class="neuro-item">
+                        <div class="neuro-icon">&#9878;</div>
+                        <div>
+                            <h4>Le Biais de Négativité</h4>
+                            <p>92% de nos peurs concernent des menaces qui n'existent pas. Un circuit neuronal hérité de nos ancêtres.</p>
+                        </div>
+                    </div>
+                    <div class="neuro-item">
+                        <div class="neuro-icon">&#10227;</div>
+                        <div>
+                            <h4>Le Cycle Sympathique / Parasympathique</h4>
+                            <p>L'accélérateur (stress) et le frein (récupération). Le problème n'est pas l'effort, c'est l'absence de récupération.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <div class="quote-banner">
+        <p class="quote-text">"Le génie n'existe pas, il n'y a que des <span>stratégies gagnantes</span>."</p>
+    </div>
+
+    <!-- APPROACH / 3 PILLARS -->
+    <section class="approach" id="methode">
+        <div class="section-inner">
+            <p class="section-label fade-up">La méthode</p>
+            <h2 class="section-title fade-up">Trois piliers de <span>compétences</span> acquises</h2>
+            <div class="approach-intro fade-up">
+                <p>Mon approche est pragmatique et directement applicable au poste de travail. J'utilise les codes de l'entreprise pour transformer une pratique de bien-être en un véritable levier de performance opérationnelle.</p>
+            </div>
+            <div class="pillars">
+                <div class="pillar fade-up">
+                    <div class="pillar-number">01</div>
+                    <h3>Comprendre</h3>
+                    <p>Décoder les mécanismes neurobiologiques du stress. Identifier les signaux d'alerte de votre système nerveux et comprendre le fonctionnement de la boucle stress-récupération.</p>
+                    <div class="pillar-accent"></div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-number">02</div>
+                    <h3>Agir</h3>
+                    <p>Acquérir une boîte à outils de micro-réactions invisibles et immédiates : cohérence cardiaque, relaxation dynamique et techniques de visualisation applicables au poste de travail.</p>
+                    <div class="pillar-accent"></div>
+                </div>
+                <div class="pillar fade-up">
+                    <div class="pillar-number">03</div>
+                    <h3>Durer</h3>
+                    <p>Installer des rituels de récupération pour maintenir un haut niveau d'engagement. Chaque participant repart avec sa Fiche Stratégique et son Kit de Pilotage personnalisé.</p>
+                    <div class="pillar-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section class="programme" id="programme">
+        <div class="section-inner">
+            <p class="section-label fade-up">Le programme</p>
+            <h2 class="section-title fade-up">Comprendre, Expérimenter, <span>Intégrer</span></h2>
+            <div class="programme-grid">
+                <div class="programme-steps">
+                    <div class="step fade-up">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h4>Origines biologiques et mécanismes du stress</h4>
+                            <p>Décryptage scientifique du cerveau archaïque, du biais de négativité et du cycle sympathique/parasympathique.</p>
+                        </div>
+                    </div>
+                    <div class="step fade-up">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h4>Causes, contraintes et bénéfices</h4>
+                            <p>Comprendre le stress comme une énergie : le problème n'est pas l'effort, c'est l'absence de récupération.</p>
+                        </div>
+                    </div>
+                    <div class="step fade-up">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h4>La sophrologie comme outil de régulation</h4>
+                            <p>Cohérence cardiaque, relaxation dynamique et visualisation : des interrupteurs physiologiques immédiats.</p>
+                        </div>
+                    </div>
+                    <div class="step fade-up">
+                        <div class="step-num">4</div>
+                        <div>
+                            <h4>Feedback et intégration des pratiques</h4>
+                            <p>Bilan, engagement personnel et défi "Réflexe" pour ancrer les outils dans le quotidien professionnel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kit-card fade-up">
+                    <h3>Le "Kit de Pilotage"</h3>
+                    <p class="kit-subtitle">L'atout pérennité du programme</p>
+                    <div class="kit-feature">
+                        <div class="kit-feature-icon">&#128203;</div>
+                        <p><strong>Fiche Stratégique cartonnée</strong> — Les clés théoriques et les 4 exercices de relaxation dynamique pour une pratique flash au poste de travail.</p>
+                    </div>
+                    <div class="kit-feature">
+                        <div class="kit-feature-icon">&#127911;</div>
+                        <p><strong>Visualisation guidée audio</strong> — Un outil d'entraînement quotidien à revivre en autonomie complète.</p>
+                    </div>
+                    <div class="kit-feature">
+                        <div class="kit-feature-icon">&#127909;</div>
+                        <p><strong>Capsule vidéo "Boule dynamique"</strong> — Pour pratiquer la cohérence cardiaque avec aisance.</p>
+                    </div>
+                    <div class="kit-feature">
+                        <div class="kit-feature-icon">&#9854;</div>
+                        <p><strong>Accès illimité</strong> au centre des ressources numériques via QR codes.</p>
+                    </div>
+                    <div class="format-badge">Atelier immersif de 3 heures (demi-journée)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section class="packages" id="packages">
+        <div class="section-inner">
+            <div class="packages-intro">
+                <p class="section-label fade-up">Offres d'intervention</p>
+                <h2 class="section-title fade-up">Des formats adaptés à <span>vos enjeux</span></h2>
+                <p class="fade-up">Chaque intervention est calibrée sur vos objectifs et le nombre de participants. Devis sur mesure selon vos besoins spécifiques.</p>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card fade-up">
+                    <div class="package-header">
+                        <div class="package-icon">&#9889;</div>
+                        <h3>Atelier Découverte</h3>
+                        <p class="duration">1h30 — Format conférence interactive</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Introduction aux mécanismes neurobiologiques du stress</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Démonstration de la cohérence cardiaque (protocole 3-6-5)</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Exercice collectif de relaxation dynamique</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Jusqu'à 30 participants</p>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <p class="price">Devis personnalisé</p>
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="package-card featured fade-up">
+                    <div class="package-badge">Recommandé</div>
+                    <div class="package-header">
+                        <div class="package-icon">&#129504;</div>
+                        <h3>Atelier Immersif</h3>
+                        <p class="duration">3h — Format demi-journée</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Programme complet en 4 étapes : comprendre, expérimenter, intégrer</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>4 techniques de régulation du système nerveux</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Kit de Pilotage complet (fiche, audio, vidéo)</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Fiche Stratégique individuelle</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Jusqu'à 15 participants</p>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <p class="price">Devis personnalisé</p>
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="package-card fade-up">
+                    <div class="package-header">
+                        <div class="package-icon">&#127919;</div>
+                        <h3>Programme Ancrage</h3>
+                        <p class="duration">Cycle de plusieurs séances</p>
+                    </div>
+                    <div class="package-body">
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Atelier Immersif + séances de renforcement</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Suivi de l'intégration des pratiques en conditions réelles</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Approfondissement selon les besoins identifiés</p>
+                        </div>
+                        <div class="package-feature">
+                            <span class="package-check">&#10003;</span>
+                            <p>Rapport d'impact pour votre direction</p>
+                        </div>
+                    </div>
+                    <div class="package-footer">
+                        <p class="price">Devis personnalisé</p>
+                        <a href="#contact">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="impact" id="impact">
+        <div class="section-inner">
+            <div style="text-align: center;">
+                <p class="section-label fade-up">L'impact opérationnel</p>
+                <h2 class="section-title fade-up">Des bénéfices <span>mesurables</span> pour votre organisation</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card fade-up">
+                    <div class="impact-icon">&#128161;</div>
+                    <h4>Disponibilité mentale</h4>
+                    <p>Réduction du "brouillard mental" pour une meilleure prise de décision</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-icon">&#128170;</div>
+                    <h4>Résilience</h4>
+                    <p>Capacité à rebondir après des pics d'activité intense</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-icon">&#128293;</div>
+                    <h4>Engagement</h4>
+                    <p>Prévention de l'épuisement professionnel (burn-out)</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-icon">&#9881;</div>
+                    <h4>Autonomie</h4>
+                    <p>Des collaborateurs outillés pour s'auto-réguler en toute discrétion</p>
+                </div>
+                <div class="impact-card fade-up">
+                    <div class="impact-icon">&#129309;</div>
+                    <h4>Climat Social</h4>
+                    <p>Renforcement de la cohésion face aux pics d'activité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-portrait fade-up">
+                    <img src="Illustration Amélie.jpeg" alt="Amélie Brochet">
+                </div>
+                <div class="about-content fade-up">
+                    <p class="section-label">À propos</p>
+                    <h2>Amélie <span style="color: var(--gold);">Brochet</span></h2>
+                    <p>
+                        Sophrologue certifiée et spécialiste en préparation mentale, j'interviens auprès des entreprises pour transformer la gestion du stress en compétence opérationnelle durable.
+                    </p>
+                    <p>
+                        Mon approche est fondée sur les <strong>neurosciences</strong> et les outils éprouvés de la sophrologie. Je traduis la science du système nerveux en protocoles concrets, directement applicables au poste de travail.
+                    </p>
+                    <p>
+                        Notre objectif commun : passer de la <strong>réaction automatique</strong> au <strong>pilotage conscient</strong> grâce à des outils de régulation du système nerveux validés scientifiquement.
+                    </p>
+                    <div class="about-credentials">
+                        <span class="credential">&#127891; Sophrologue certifiée</span>
+                        <span class="credential">&#129504; Préparation mentale</span>
+                        <span class="credential">&#127963; Paris & Île-de-France</span>
+                        <span class="credential">&#128187; Présentiel ou visio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="section-inner">
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <p class="section-label">Contact</p>
+                    <h2 class="section-title">Construisons votre <span>programme</span> sur mesure</h2>
+                    <p>Chaque intervention est calibrée selon vos enjeux, le profil de vos équipes et le nombre de participants. Contactez-moi pour un échange sans engagement.</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">&#128222;</div>
+                        <div>
+                            <a href="tel:+33673665240">06 73 66 52 40</a>
+                            <small>Du lundi au vendredi</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">&#9993;</div>
+                        <div>
+                            <a href="mailto:selancer.sophrologie@gmail.com">selancer.sophrologie@gmail.com</a>
+                            <small>Réponse sous 24h</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">&#128205;</div>
+                        <div>
+                            <span>Paris & Île-de-France</span>
+                            <small>Intervention en présentiel ou visio</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">&#128247;</div>
+                        <div>
+                            <a href="https://www.instagram.com/ame.broch" target="_blank" rel="noopener">@ame.broch</a>
+                            <small>Instagram</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-up">
+                    <h3>Demander un devis gratuit</h3>
+                    <form action="mailto:selancer.sophrologie@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Entreprise</label>
+                                <input type="text" id="company" name="company" placeholder="Nom de l'entreprise">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email professionnel</label>
+                                <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="06 ...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="format">Format souhaité</label>
+                            <select id="format" name="format">
+                                <option value="">Choisir un format</option>
+                                <option value="decouverte">Atelier Découverte (1h30)</option>
+                                <option value="immersif">Atelier Immersif (3h)</option>
+                                <option value="ancrage">Programme Ancrage (cycle)</option>
+                                <option value="sur-mesure">Format sur mesure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre besoin</label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre contexte, le nombre de participants estimé, vos objectifs..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Amélie Brochet — Sophrologue & spécialiste en préparation mentale — Paris & Île-de-France</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('open'));
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
