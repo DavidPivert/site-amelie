@@ -1,2 +1,7 @@
 .DS_Store
 .vercel
+node_modules/
+qrcodes/*.png
+qrcodes/*.svg
+qrcodes/*.zip
+qrcodes/index.json
