@@ -813,12 +813,18 @@
         .about-portrait {
             position: relative;
             width: min(100%, 380px);
+            aspect-ratio: 5 / 7;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #f4f4f2;
+            box-shadow: 0 20px 50px rgba(28, 61, 90, 0.12);
         }
         .about-portrait img {
             display: block;
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(28, 61, 90, 0.12);
+            height: 100%;
+            object-fit: cover;
+            object-position: center 32%;
         }
         .about-portrait::after {
             content: '';
